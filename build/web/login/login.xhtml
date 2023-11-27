@@ -1,0 +1,32 @@
+<!-- login.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Login Page</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+    <h:body styleClass="humanity-theme">
+    <h:form id="loginForm" styleClass="login-panel" >
+<h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="email" value="Username:" styleClass="login-label"/>
+                    <p:inputText id="email" value="#{loginBean.email}" required="true" placeholder="Username" styleClass="login-input"/>
+
+                    <h:outputLabel for="password" value="Password:" styleClass="login-label"/>
+                    <p:password id="password" value="#{loginBean.password}" required="true" placeholder="Password" styleClass="login-input"/>
+                </h:panelGrid>
+
+                <!-- Affichage de l'erreur avec un message personnalisé -->
+                <h:panelGroup rendered="#{loginBean.showInvalidCredentials}">
+                    <span class="error-icon">&#9888;</span>
+                    <h:outputText value="Vos informations sont incorrectes" styleClass="ui-message-error"/>
+                </h:panelGroup>
+                
+                <p:commandButton value="Login" action="#{loginBean.checkCredentials}"  ajax="false" styleClass="login-button"/>
+
+    </h:form>
+    </h:body>
+</html>
