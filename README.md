@@ -3,6 +3,7 @@ Ce TP consiste à réaliser une application web en utilisant:
 - Hibernate
 - JSF
 - JPA
+  
 Cette application permet l'ajout, la modification et la suppression des employés et des services. Ainsi, l'authentification aux différents comptes des employés.
 
 Voici les interfaces de cette application:
